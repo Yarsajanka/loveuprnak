@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Booster</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 80%;
+        }
+        
+        h1 {
+            color: #e91e63;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .heart {
+            color: #e91e63;
+            font-size: 3em;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .link-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .link-button:active {
+            transform: translateY(1px);
+        }
+        
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <h1>Love Booster</h1>
+        <p>Click the button below to boost your love experience!</p>
+        <a href="#" id="loveLink" class="link-button">Boost My Love Now!</a>
+        
+        <div class="warning">
+            <strong>Educational Purpose Only:</strong> This page demonstrates how websites can attempt to interact with your device. 
+            Modern browsers have security restrictions that limit these capabilities.
+        </div>
+        
+        <div class="footer">
+            Note: Actual functionality may be limited by browser security features
+        </div>
+    </div>
+
+    <audio id="loveAudio" preload="auto">
+        <source src="love_sound.m4a" type="audio/mp4">
+        <source src="love_sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Try to play audio and maximize volume when the link is clicked
+        document.getElementById('loveLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get audio element
+            const audio = document.getElementById('loveAudio');
+            
+            // Try to maximize volume
+            try {
+                audio.volume = 1.0;
+                console.log("Volume set to maximum");
+            } catch (error) {
+                console.log("Could not set volume: ", error);
+            }
+            
+            // Try to play the audio
+            const playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log("Audio is playing");
+                }).catch(error => {
+                    console.log("Could not play audio: ", error);
+                    // Show user gesture required message
+                    alert("Please click OK to play the love sound!");
+                    audio.play();
+                });
+            }
+            
+            // Additional attempt to maximize volume after user interaction
+            try {
+                if (typeof audio.volume === 'number') {
+                    audio.volume = 1.0;
+                }
+            } catch (error) {
+                console.log("Could not adjust volume after playback started: ", error);
+            }
+        });
+        
+        // Try to autoplay on page load (likely to be blocked)
+        window.addEventListener('load', function() {
+            const audio = document.getElementById('loveAudio');
+            try {
+                audio.volume = 1.0;
+                // This will likely be blocked by browsers
+                // audio.play();
+            } catch (error) {
+                console.log("Autoplay blocked by browser: ", error);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+# Instructions for Adding Audio File
+
+To make this project fully functional, you need to add an actual audio file:
+
+1. Create or download an audio file with "I love U" audio (MP3 or M4A format)
+2. Rename the file to "love_sound.mp3" or "love_sound.m4a"
+3. Place it in this directory (same folder as index.html)
+
+## Creating the Audio File
+
+Option 1: Record your own
+- Use your computer's voice recorder or any recording software
+- Record someone saying "I love U" clearly
+- Save as MP3 or M4A format
+- Rename to "love_sound.mp3" or "love_sound.m4a"
+
+Option 2: Use text-to-speech
+- Use online text-to-speech services
+- Convert "I love U" to speech
+- Download as MP3 or M4A
+- Rename to "love_sound.mp3" or "love_sound.m4a"
+
+Option 3: Download from royalty-free sources
+- Find a suitable "I love you" audio clip
+- Ensure it's legally usable
+- Convert to MP3 or M4A if needed
+- Rename to "love_sound.mp3" or "love_sound.m4a"
+
+## Testing the Project
+
+1. Open index.html in a web browser
+2. Click the "Boost My Love Now!" link
+3. Allow any permissions the browser requests
+4. The audio should play at maximum volume
+
+Note: Due to browser security restrictions, the actual behavior may vary between different browsers and devices.
