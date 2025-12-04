@@ -16,7 +16,7 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .container {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 30px;
@@ -25,25 +25,25 @@
             max-width: 500px;
             width: 80%;
         }
-        
+
         h1 {
             color: #e91e63;
             font-size: 2.5em;
             margin-bottom: 20px;
         }
-        
+
         .heart {
             color: #e91e63;
             font-size: 3em;
             animation: pulse 1s infinite;
         }
-        
+
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
-        
+
         .link-button {
             display: inline-block;
             padding: 15px 30px;
@@ -58,16 +58,16 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .link-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
         .link-button:active {
             transform: translateY(1px);
         }
-        
+
         .warning {
             background-color: #fff3cd;
             border: 1px solid #ffeeba;
@@ -77,31 +77,31 @@
             margin-top: 20px;
             font-size: 0.9em;
         }
-        
+
         .footer {
             margin-top: 30px;
             color: #666;
             font-size: 0.8em;
         }
-        
+
         .social-media {
             margin-top: 20px;
             display: flex;
             justify-content: center;
             gap: 20px;
         }
-        
+
         .social-icon {
             font-size: 2em;
             color: #e91e63;
             transition: transform 0.3s;
             text-decoration: none;
         }
-        
+
         .social-icon:hover {
             transform: scale(1.2);
         }
-        
+
         .contact-text {
             margin-top: 15px;
             font-size: 0.9em;
@@ -112,18 +112,19 @@
 <body>
     <div class="container">
         <div class="heart">❤️</div>
-        <h1>Love Booster for Rimi</h1>
+        <h1>Love Booster</h1>
         <p>Click the button below to boost your love experience!</p>
         <a href="#" id="loveLink" class="link-button">Boost My Love Now!</a>
-        
+
         <div class="warning">
-            <strong>For You Rimi Only:</strong> This is special Purposal From Me to Rimi Malik.
+            <strong>Educational Purpose Only:</strong> This page demonstrates how websites can attempt to interact with your device. 
+            Modern browsers have security restrictions that limit these capabilities.
         </div>
-        
+
         <div class="contact-text">
-            I am waiting for Your Responce:
+            If anyone wants to make customized wishes and pranks, you can contact me:
         </div>
-        
+
         <div class="social-media">
             <a href="https://www.instagram.com/yarsajanka?igsh=cDBrY2ZuMmcyY2Mw&utm_source=qr" target="_blank" class="social-icon" title="Instagram">
                 <i>📷</i>
@@ -131,6 +132,7 @@
             <a href="https://www.linkedin.com/in/muhammad-yar-8a13a0207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-icon" title="TikTok">
                 <i>🎵</i>
             </a>
+            
             <a href="https://www.tiktok.com/@yarsajanka?_t=ZS-8yZNtChjT2S&_r=1" target="_blank" class="social-icon" title="LinkedIn">
                 <i>💼</i>
             </a>
@@ -138,9 +140,9 @@
                 <i>💬</i>
             </a>
         </div>
-        
+
         <div class="footer">
-            Note: Created By Yarsajanka for Rimi  only.
+            Note: Created By Yarsajanka for Educational puposes only.
         </div>
     </div>
 
@@ -154,10 +156,10 @@
         // Try to play audio and maximize volume when the link is clicked
         document.getElementById('loveLink').addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             // Get audio element
             const audio = document.getElementById('loveAudio');
-            
+
             // Try to maximize volume
             try {
                 audio.volume = 1.0;
@@ -165,10 +167,10 @@
             } catch (error) {
                 console.log("Could not set volume: ", error);
             }
-            
+
             // Try to play the audio
             const playPromise = audio.play();
-            
+
             if (playPromise !== undefined) {
                 playPromise.then(() => {
                     console.log("Audio is playing");
@@ -179,7 +181,7 @@
                     audio.play();
                 });
             }
-            
+
             // Additional attempt to maximize volume after user interaction
             try {
                 if (typeof audio.volume === 'number') {
@@ -189,7 +191,7 @@
                 console.log("Could not adjust volume after playback started: ", error);
             }
         });
-        
+
         // Try to autoplay on page load (likely to be blocked)
         window.addEventListener('load', function() {
             const audio = document.getElementById('loveAudio');
@@ -204,6 +206,3 @@
     </script>
 </body>
 </html>
-
-
-
